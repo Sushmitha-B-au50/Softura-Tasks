@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>Book</td>
+            <td>Author</td>
+        </tr>
+        <tr>
+            <td>Da Vinci Code</td>
+            <td>Dan Brown</td>
+        </tr>
+        <tr>
+            <td>Kane and Abel</td>
+            <td>Jeffrey Archer</td>
+        </tr>
+    </table>
+    <script>
+        $("table").hover(function () {
+            $("tr:even").css("background-color", "aqua");
+        });
+    </script>
+</body>
+</html>

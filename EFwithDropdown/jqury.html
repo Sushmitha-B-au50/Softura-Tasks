@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            $('#p1').mouseenter(function () {
+                alert("your mouse entered paragraph")
+            })
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <h2> Explore mouse enter</h2>
+        <p id="p1"> bring your cursor to paragraph</p>
+
+        <ul>
+            <li>Chocolates</li>
+            <li>Ice Creams</li>
+            <li>Fruits</li>
+        </ul>
+        <script>
+            $("li").click(function () {
+                alert($(this).text());
+            })
+        </script>
+    </div>
+</body>
+</html>

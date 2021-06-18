@@ -1,0 +1,31 @@
+﻿
+@model  System.Data.DataTable
+ @using System.Data
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<body>
+    <h3>Department List</h3>
+    @*@Html.DropDownList("DepartmentList", (IEnumerable<SelectListItem>)TempData["depEF"])*@
+<div>
+    <h4>List of Departments</h4>
+    <form id="frmDetailsByDept" method="post" action="@Url.Action("Employee")">
+        <select name="txtname" />
+        <option selected>
+            select DepartmentName
+        </option>
+        @foreach (DataRow dr in Model.Rows)
+        {
+            <option value="@dr["Name"].ToString()"> @dr["Name"].ToString() </option>
+        }
+        </select>
+   
+        <input type="submit" value="Submit" name="action" />
+        </form>
+        </div>
+</body>
+

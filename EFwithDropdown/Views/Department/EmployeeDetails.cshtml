@@ -1,0 +1,74 @@
+﻿@*@model EFwithDropdown.Models.EmployeeDetails*@
+
+@using System.Data
+@model System.Data.DataTable
+
+@{
+    ViewBag.Title = "EmployeeDetails";
+}
+
+<h2>EmployeeDetails @TempData.Peek("Dept")</h2>
+
+<div>
+    <form id="frmNewemp" method="post" name="display" action="@Url.Action("EmployeeDetails")">
+
+        @*<p>@TempData["depEF"])</p>*@
+        <br />
+        @{ if (Model.Rows.Count > 0)
+            {
+                <table border="1">
+                    <thead>
+                                <tr>
+                                    <td>BusinessEntityID </td>
+                                    <td>FirstName</td>
+                                    <td>Gender</td>
+                                    <td>MaritalStatus</td>
+                                    <td>Hiredate</td>
+                                    <td>Name</td>
+                                    <td>DepartmentID</td>
+                                </tr>
+                    </thead>
+                    @foreach (DataRow dr in Model.Rows)
+                    {
+                <tr>
+                    <td> @dr["BusinessEntityID"].ToString()</td>
+                    <td> @dr["FirstName"].ToString()</td>
+                    <td> @dr["Gender"].ToString()</td>
+                    <td> @dr["MaritalStatus"].ToString()</td>
+                    <td> @dr["Hiredate"].ToString()</td>
+                    <td> @dr["Name"].ToString()</td>
+                    <td> @dr["DepartmentID"].ToString()</td>
+
+                </tr>}
+                  
+                </table>}
+            }
+
+                @*@{ if (Model.Rows.Count > 0)
+                    {
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <td>BusinessEntityID </td>
+                                    <td>FirstName</td>
+                                    <td>Gender</td>
+                                    <td>MaritalStatus</td>
+                                    <td>Hiredate</td>
+                                </tr>
+                            </thead>
+                            @foreach (DataRow dr in Model.Rows)
+                            {
+                                <tr>
+                                    <td>@dr["BusinessEntityID"].ToString()</td>
+                                    <td>@dr["FirstName"].ToString()</td>
+                                    <td>@dr["Gender"].ToString()</td>
+                                    <td>@dr["MaritalStatus"].ToString()</td>
+                                    <td>@dr["Hiredate"].ToString()</td>
+                                </tr>
+
+                                    }
+                            </table> } }*@
+            </form>
+        </div>
+
+
