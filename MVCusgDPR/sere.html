@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("div").text($("form").serialize());
+            });
+        });
+    </script>
+</head>
+<body>
+    <form action="">
+        place of interset:<input type="text" name="poi" value="" /><br />
+        city/country:<input type="text" name="poi" value="" /><br />
+        <button>serialize data</button>
+    </form>
+</body>
+</html>
